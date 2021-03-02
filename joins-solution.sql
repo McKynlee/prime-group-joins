@@ -19,7 +19,12 @@ JOIN "products" ON "products".id = "warehouse_product".product_id
 WHERE "products".id = 6;
 
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
-
+SELECT count("orders"), "customers".first_name
+  FROM "customers"
+  JOIN "addresses" ON "addresses".customer_id = "customers".id
+  JOIN "orders" ON "orders".address_id = "addresses".id
+  GROUP BY "customers".id;
+  -- George doesn't have any orders
 
 -- 6. How many customers do we have?
 
