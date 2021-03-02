@@ -3,7 +3,8 @@ SELECT "customers".first_name, "customers".last_name, "addresses".street, "addre
 JOIN "addresses" ON "customers".id = "addresses".customer_id;
 
 -- 2. Get all orders and their line items (orders, quantity and product).
-
+SELECT "orders".order_date, "line_items".quantity, "line_items".product_id FROM "orders"
+JOIN "line_items" ON "orders".id = "line_items".order_id;
 
 -- 3. Which warehouses have cheetos?
 
