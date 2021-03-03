@@ -27,13 +27,15 @@ SELECT count("orders"), "customers".first_name
   -- George doesn't have any orders
 
 -- 6. How many customers do we have?
-
+SELECT count(*) as "Number of customers" FROM "customers";
 
 -- 7. How many products do we carry?
-
+SELECT count(*) as "Number of Products" FROM "products";
 
 -- 8. What is the total available on-hand quantity of diet pepsi?
-
+SELECT SUM("warehouse_product".on_hand) as "Diet Pepsi on hand" FROM "warehouse_product"
+JOIN "products" ON "warehouse_product".product_id = "products".id
+WHERE "products".id = 6;
 
 
 -- ## Stretch
