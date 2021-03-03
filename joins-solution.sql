@@ -23,7 +23,7 @@ SELECT count("orders"), "customers".first_name
   FROM "customers"
   JOIN "addresses" ON "addresses".customer_id = "customers".id
   JOIN "orders" ON "orders".address_id = "addresses".id
-  GROUP BY "customers".id;
+  GROUP BY "customers".first_name;
   -- George doesn't have any orders
 
 -- 6. How many customers do we have?
